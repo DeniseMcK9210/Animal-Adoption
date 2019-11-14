@@ -1,0 +1,149 @@
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    color: #2e008d;
+    text-align: right
+}
+
+.bg-white {
+    background: white
+}
+
+.push {
+    margin-top: 90px
+}
+
+.stay{
+    position: fixed
+}
+
+.logo {
+    height: 70px
+}
+
+.hr-p {
+  border: 1px solid #ff1569;
+}
+
+.hr-y {
+  border: 1px solid #f3ff13;
+}
+
+.hr-o {
+  border: 1px solid #ff6e4e;
+}
+
+.pink{
+    color: #ff1569
+}
+
+.orange{
+    color: #ff6e4e
+}
+
+.yellow{
+    color: #f3ff13
+}
+
+.purple{
+    color: #ee3ec9
+}
+
+.dpurple {
+    color: #2e008d
+}
+
+#filter {
+    background-color: #2e008d;
+    color: #fdf9e5
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+/*bg d purple*/
+.bg-dp {
+    background-color: #19014b;
+}
+
+/* impact font for header */
+.fh-sans {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    color: #19014b;
+    font-size: 1.5em;
+    letter-spacing: .5px;
+    font-variant: small-caps;
+  }
+
+/* font for links */
+.fa-sans {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-weight: 300
+    }
+
+
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 175px;
+    background-color: #19014b;
+    position: fixed;
+    height: 80%;
+    overflow: auto;
+    border-radius: 10px
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #2e008d;
+    color: #fdf9e5;
+    font-weight: 350;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #fdf9e5;
+    color: #2e008d;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 175px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="style.css">
+    <title>A Look Inside Animal Shelters</title>
+  </head>
+
+
+  <body class="fa-sans"> 
+     <nav class="navbar navbar-expand-lg bg-white py-1 fixed-top">
+          <a class="navbar-brand" href="/">
+            <img class="logo" src="{{ url_for('static', filename='media/logo.png') }}" alt="A Look Inside Animal Shelters">
+            </a>
+        </nav>
+
+    <!-- The sidebar -->
+      <div class="push">
+         <div class="sidebar">
+            <a class="active" href="/home">Home</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A Look Inside</a>
+              <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/intakeoutake">Intake vs. Outake</a>
+                <a class="dropdown-item" href="/locationleaflet">Location Found</a>
+              </div>
+            <a href="/howtohelp">How to Help</a>
+            <a href="/resources">Resources</a>
+        </div>
+
+        <!-- Content -->
+        <div class="content"> 
+          <div class="row">
+              <div class="jumbotron col-lg-11 mx-auto">
+                  <div id="graph3">
+                    <h2 class="pink">A Look Inside Animal Shelters</h2>
+                    <hr class="my-4 hr-o">
+                    <p>Approximately 6.5 million animals enter U.S. animal shelters nationwide every year. 
+                      Of those, only half are adopted and less than one sixth are returned to their owners. 
+                      In 2011, it was estimated that 2.6 million animals were euthanixed. This number has decreased
+                      to 1.5 million in recent years, partially due to the number of animals being adopted or being
+                      returned to their owners!  
+                    </p>
+                    <p>If we were able to figure out the probability of an animals chance of being adopted we could then 
+                      help improve those animals chances of finding their fur-ever homes!
+                      </p>
+                    <p>In order to do this we took a look inside Austin, Texas' Animal Shelter intake and outake data to 
+                      try and develop a model to predict the outcomes of pets based on age, characteristics and duration
+                      of stay.
+                    </p>
+                    
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+  </body>
+
+
+
+</html>
