@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 import psycopg2
-
+import sqlite3
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -12,39 +12,54 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import MetaData, Table
+from sqlalchemy.orm import mapper, sessionmaker
 
 app = Flask(__name__)
+
 
 #################################################
 # Database Setup
 #################################################
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///AA_db.sqlite"
-db = SQLAlchemy(app)
+class Dogs(object):
+   pass
+class Found(object):
+   pass
+class Final(object):
+   pass
+ 
+#----------------------------------------------------------------------
+   
+engine = create_engine('sqlite:///AA_db.sqlite', echo=False)
+metadata = MetaData(engine)
+AAC_Found = Table('AAC_Found', metadata, Column("Animal ID", Integer, primary_key=True),
+                      autoload=True)
+AAC_In_Out_Final = Table('AAC_In_Out_Final', metadata, Column("Animal ID", Integer, primary_key=True),
+                      autoload=True)
+Pet_Dogs = Table('Pet_Dogs', metadata, Column("Location", Integer, primary_key=True),
+                      autoload=True)
+mapper(Found, AAC_Found)
+mapper(Final, AAC_In_Out_Final)
+mapper(Dogs, Pet_Dogs)
 
-# reflect an existing database into a new model
+Session = sessionmaker(bind=engine)
+session = Session()
+
 Base = automap_base()
 
-class Found(Base):
+# reflect the tables
+Base.prepare(engine, reflect=True)
 
-    __tablename__ = 'AAC_Found'
 
-    index = Column(Integer, primary_key=True)
-
-class AAC(Base):
-
-    __tablename__ = 'AAC_In_Out_Final'
-
-    index = Column(Integer, primary_key=True)
-
-class Pets(Base):
-
-    __tablename__ = 'Pet_Dogs'
-
-    index = Column(Integer, primary_key=True)
+# Save reference to table
+#movies= Base.classes.bechdel_table
+found = metadata.tables['AAC_Found']
+final = metadata.tables['AAC_In_Out_Final']
+dogs = metadata.tables['Pet_Dogs']
 
 # reflect the tables
-Base.prepare(db.engine, reflect=True)
+Base.prepare(engine, reflect=True)
 
 #Render intro page
 @app.route("/")
@@ -68,30 +83,13 @@ def dashboard():
 @app.route("/cmovies")
 def moviecolumns():
     # Use Pandas to perform the sql query
-    stmt = db.session.query(movies).statement
-    movie_df = pd.read_sql_query(stmt, db.session.bind)
+    stmt = session.query(dogs).statement
+    dogs_df = pd.read_sql_query(stmt, session.bind)
 
-
-
-         # Format the data to send as json
-    data = {
-        "id": movie_df.imdbid.values.tolist(),
-        "bechdel_rating": movie_df.bechdel_rating.values.tolist(),
-        "title": movie_df.title.values.tolist(),
-        "year": movie_df.year.values.tolist(),
-        "binary": movie_df.binary.values.tolist(),
-        "budget": movie_df.budget_2013.values.tolist(),
-        "dom_gross": movie_df.domgross_2013.values.tolist(),
-        "int_gross": movie_df.intgross_2013.values.tolist(),
-        "genre": movie_df.genres.values.tolist(),
-        "genreA": movie_df.A.values.tolist(),
-        "genreB": movie_df.B.values.tolist(),
-        "genreC": movie_df.c.values.tolist(),
-        "decade": decade,
-        "imdb_rating": movie_df.averageRating.values.tolist(),
-        "num_votes": movie_df.numVotes.values.tolist()
-    }
+    data = dogs_df.to_json(orient='records')
     return jsonify(data)
 
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
