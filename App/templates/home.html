@@ -42,6 +42,49 @@
 
         <!-- Content -->
         <div class="content"> 
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <img src="{{ url_for('static', filename='media/logo.png') }}" style="width:100%">
+                  <img src="../static/media/logo.png" style="width:100%">
+                  <div class="overlay">
+                    <div class="text">Caption Text
+                    <a class="btn btn-slide" href="#">Adopt</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="{{ url_for('static', filename='media/logo.png') }}" style="width:100%">
+                  <img src="../static/media/logo.png" style="width:100%">
+                    <div class="overlay">
+                  <div class="text">Caption Two
+                    <a class="btn btn-slide" href="#">Volunteer</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="../static/media/logo.png" style="width:100%">
+                  <img src="{{ url_for('static', filename='media/logo.png') }}" style="width:100%">
+                    <div class="overlay">
+                  <div class="text">Caption 3
+                    <a class="btn btn-slide" href="#">Donate</a>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                </div>
+            <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+            <script src="../static/js/home.js"></script>
           <div class="row">
               <div class="jumbotron col-lg-11 mx-auto bg-white">
                   <div id="graph3">
@@ -49,15 +92,15 @@
                     <hr class="my-4 hr-o">
                     <p>Approximately 6.5 million animals enter U.S. animal shelters nationwide every year. 
                       Of those, only half are adopted and less than one sixth are returned to their owners. 
-                      In 2011, it was estimated that 2.6 million animals were euthanixed. This number has decreased
+                      In 2011, it was estimated that 2.6 million animals were euthanized. This number has decreased
                       to 1.5 million in recent years, partially due to the number of animals being adopted or being
                       returned to their owners!  
                     </p>
-                    <p>If we were able to figure out the probability of an animals chance of being adopted we could then 
-                      help improve those animals chances of finding their fur-ever homes!
+                    <p>By finding the probability of an animal being adopted, we could then 
+                      help improve those animals' chances of finding their fur-ever homes!
                       </p>
                     <p>In order to do this we took a look inside Austin Animal Center's intake and outcome data to 
-                      try and develop a model to predict the outcomes of pets based on age, characteristics and duration
+                      develop a model to predict the outcomes of pets based on age, sex, physical characteristics and duration
                       of stay.
                     </p>
                     
@@ -68,7 +111,7 @@
         </div>
   </body>
     
-    <footer class="py-3 push">
+    <footer class="py-3">
         <div class="container">
           <p class="m-0 text-center"> Copyright &copy; 2019 The Team. All rights reserved.</p>
         </div>
