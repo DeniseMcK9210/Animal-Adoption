@@ -1,15 +1,15 @@
 ul{
     list-style-type: circle;
-    color: #ff1569
+    color: #ff6e4e
 }
 
 a {
-    color:#ff6e4e;
+    color:#ffb500;
     text-decoration: none
 }
 
 a:hover {
-    color: #ff1569
+    color: #ff6e4e
 }
 
 footer {
@@ -20,12 +20,12 @@ footer {
     height: 50px;
     width: 100%;
     background-color: transparent;
-    color: #2e008d;
+    color: #0d5d00;
     text-align: right
 }
 
 .bg-white {
-    background: white
+    background-color: white
 }
 
 .push {
@@ -46,6 +46,9 @@ footer {
   border: 1px solid #ff6e4e;
 }
 
+.hr-y {
+  border: 1px solid #ffb500;
+}
 
 /*Branded colors*/
 .pink{
@@ -95,9 +98,9 @@ footer {
     width: 175px;
     background-color: #d6ad7a;
     position: fixed;
-    height: 80%;
+    height: 70%;
     overflow: auto;
-    border-radius: 10px
+    border-radius: 5px
   }
   
   /* Sidebar links */
@@ -131,8 +134,8 @@ footer {
       height: 1500px;
     }
   
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
+  /* On screens that are less than 800px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 800px) {
     .sidebar {
       width: 100%;
       height: auto;

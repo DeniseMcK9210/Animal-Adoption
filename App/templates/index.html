@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Animal Adoptions</title>
+  <title>Inside AAC</title>
   <meta name="keywords" content="css3, html5, js, background video, fullscreen video">
   <meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
 
@@ -166,21 +166,20 @@
 
     <section id="main_content">
       <div id="head">
-        <h1>A Look Inside Animal Shelters</h1>
-        <p class="sub_head">predicting a pets likelihood to find a home</p>
+        <img src="{{ url_for('static', filename='media/logo2.png') }}", height="100">
+        <h1>A Look Inside Austin Animal Center</h1>
+        <p class="sub_head">Analyzing a pet's likelihood of finding a home and other outcomes</p>
       </div>
 
       <div id="links">
-        <a href="home.html">Enter Site Here</a>
+        <a href="/home">Enter Site Here</a>
        
       </div>
     </section>
   </div>
 
- 
-
-  <script src="bideo.js"></script>
-  <script src="main.js"></script>
+   <script src="{{ url_for('static', filename='js/bideo.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
   <script>
     if (window.location.host.indexOf('github.io') !== -1 && window.location.protocol !== "https:") {

@@ -14,30 +14,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>A Look Inside Animal Shelters</title>
+    <title>Inside AAC</title>
   </head>
 
 
-  <body class="fa-sans"> 
+  <body class="fa-sans bg-egg"> 
      <nav class="navbar navbar-expand-lg bg-white py-1 fixed-top">
           <a class="navbar-brand" href="/">
-            <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="A Look Inside Animal Shelters">
+            <img class="logo" src="{{ url_for('static', filename='media/logo.png') }}" alt="Inside AAC">
             </a>
         </nav>
 
     <!-- The sidebar -->
       <div class="push">
          <div class="sidebar">
-            <a class="active" href="home.html">Home</a>
+            <a class="active" href="/home">Home</a>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
                       <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                        <a class="dropdown-item" href="intakeoutake.html">A Look Inside</a>
-                        <a class="dropdown-item" href="adoption.html">Adoption Probability</a>
+                        <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                        <a class="dropdown-item" href="/look-inside">A Look Inside</a>
+                        <a class="dropdown-item" href="/adoption">Adoption Probability</a>
                       </div>
-             <a href="locationleaflet.html">Location Found</a>
-            <a href="howtohelp.html">How to Help</a>
-            <a href="resources.html">Resources</a>
+             <a href="/found">Location Found</a>
+            <a href="/how-to-help">How to Help</a>
+            <a href="/resources">Resources</a>
         </div>
 
         <!-- Content -->
@@ -45,7 +45,7 @@
           <div class="row">
               <div class="jumbotron col-lg-11 mx-auto bg-white">
                   <div id="graph3">
-                    <h2 class="pink">A Look Inside Animal Shelters</h2>
+                    <h2 class="pink">A Look Inside Austin Animal Center</h2>
                     <hr class="my-4 hr-o">
                     <p>Approximately 6.5 million animals enter U.S. animal shelters nationwide every year. 
                       Of those, only half are adopted and less than one sixth are returned to their owners. 
@@ -67,7 +67,12 @@
           </div>
         </div>
   </body>
-
+    
+    <footer class="py-3 push">
+        <div class="container">
+          <p class="m-0 text-center"> Copyright &copy; 2019 The Team. All rights reserved.</p>
+        </div>
+      </footer>
 
 
 </html>
