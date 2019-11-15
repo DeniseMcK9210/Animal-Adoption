@@ -33,14 +33,14 @@ class Final(object):
    
 engine = create_engine('sqlite:///AA_db.sqlite', echo=False)
 metadata = MetaData(engine)
-AAC_Found = Table('AAC_Found', metadata, Column("Animal ID", Integer, primary_key=True),
+AAC_Stray = Table('AAC_Found', metadata, Column("Animal ID", Integer, primary_key=True),
                       autoload=True)
-AAC_In_Out_Final = Table('AAC_In_Out_Final', metadata, Column("Animal ID", Integer, primary_key=True),
+AAC_Final = Table('AAC_In_Out_Final', metadata, Column("Animal ID", Integer, primary_key=True),
                       autoload=True)
 Pet_Dogs = Table('Pet_Dogs', metadata, Column("Location", Integer, primary_key=True),
                       autoload=True)
-mapper(Found, AAC_Found)
-mapper(Final, AAC_In_Out_Final)
+mapper(Found, AAC_Stray)
+mapper(Final, AAC_Final)
 mapper(Dogs, Pet_Dogs)
 
 Session = sessionmaker(bind=engine)
@@ -54,8 +54,8 @@ Base.prepare(engine, reflect=True)
 
 # Save reference to table
 #movies= Base.classes.bechdel_table
-found = metadata.tables['AAC_Found']
-final = metadata.tables['AAC_In_Out_Final']
+found = metadata.tables['AAC_Stray']
+final = metadata.tables['AAC_Final']
 dogs = metadata.tables['Pet_Dogs']
 
 # reflect the tables
