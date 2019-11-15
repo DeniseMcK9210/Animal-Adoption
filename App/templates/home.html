@@ -13,7 +13,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>A Look Inside Animal Shelters</title>
   </head>
 
@@ -29,11 +29,13 @@
       <div class="push">
          <div class="sidebar">
             <a class="active" href="home.html">Home</a>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A Look Inside</a>
-              <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="intakeoutake.html">Intake vs. Outake</a>
-                <a class="dropdown-item" href="locationleaflet.html">Location Found</a>
-              </div>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                      <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                        <a class="dropdown-item" href="intakeoutake.html">A Look Inside</a>
+                        <a class="dropdown-item" href="adoption.html">Adoption Probability</a>
+                      </div>
+             <a href="locationleaflet.html">Location Found</a>
             <a href="howtohelp.html">How to Help</a>
             <a href="resources.html">Resources</a>
         </div>
@@ -41,7 +43,7 @@
         <!-- Content -->
         <div class="content"> 
           <div class="row">
-              <div class="jumbotron col-lg-11 mx-auto">
+              <div class="jumbotron col-lg-11 mx-auto bg-white">
                   <div id="graph3">
                     <h2 class="pink">A Look Inside Animal Shelters</h2>
                     <hr class="my-4 hr-o">
@@ -54,7 +56,7 @@
                     <p>If we were able to figure out the probability of an animals chance of being adopted we could then 
                       help improve those animals chances of finding their fur-ever homes!
                       </p>
-                    <p>In order to do this we took a look inside Austin, Texas' Animal Shelter intake and outake data to 
+                    <p>In order to do this we took a look inside Austin Animal Center's intake and outcome data to 
                       try and develop a model to predict the outcomes of pets based on age, characteristics and duration
                       of stay.
                     </p>

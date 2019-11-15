@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>A Look Inside Animal Shelters</title>
+  </head>
+
+
+  <body class="fa-sans"> 
+      <nav class="navbar navbar-expand-lg bg-white py-1  fixed-top">
+          <a class="navbar-brand" href="/">
+            <img class="logo" src="{{ url_for('static', filename='media/logo.png') }}" alt="A Look Inside Animal Shelters">
+            </a>
+        </nav>
+
+    <!-- The sidebar -->
+      <div class="push">
+         <div class="sidebar">
+            <a class="active" href="home.html">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                      <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                        <a class="dropdown-item" href="intakeoutake.html">A Look Inside</a>
+                        <a class="dropdown-item" href="adoption.html">Adoption Probability</a>
+                      </div>
+             <a href="locationleaflet.html">Location Found</a>
+            <a href="howtohelp.html">How to Help</a>
+            <a href="resources.html">Resources</a>
+        </div>
+          
+        <!-- Page content -->
+        <div class="content">
+            <h3 class="dpurple">There are Many Ways You Can Help! </h3>
+            <hr class="hr-o">
+            <ul>
+                <li><a href="https://atlantahumane.org/adopt/#.Xc3qBldKg2w">Adopt or Foster a friend!</a></li>
+                <li><a href="https://atlantahumane.org/volunteer/#.Xc3p6ldKg2w">Volunteer!</a></li>
+                <li><a href="https://secure.atlantahumane.org/site/TR?fr_id=1190&pg=entry&_ga=2.7485618.1075769016.1573767870-450986657.1573001683&_gac=1.16619844.1573775783.Cj0KCQiAk7TuBRDQARIsAMRrfUbMgIn-TdNufQSt_rbbqlLqHBmTo3HF8RMb4bB0CTbRgRlKYe_uR6saAl8NEALw_wcB">Donate!</a></li>
+                <li><a href="https://atlantahumane.org/events/#.Xc3qR1dKg2w">Check out Local Events!</a></li>
+                
+            </ul>
+        </div>
+            
+
+    
+</html>

@@ -1,46 +1,151 @@
-body {
-  padding: 0;
-  margin: 0;
+ul{
+    list-style-type: circle;
+    color: #ff1569
 }
 
-#map,
-body,
-html {
-  height: 100%;
+a {
+    color:#ff6e4e;
+    text-decoration: none
 }
 
-/*Legend specific*/
-.legend {
-  padding: 6px 8px;
-  font: 14px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.8);
-  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
-  /*border-radius: 5px;*/
-  line-height: 24px;
-  color: #555;
-}
-.legend h4 {
-  text-align: center;
-  font-size: 16px;
-  margin: 2px 12px 8px;
-  color: #777;
+a:hover {
+    color: #ff1569
 }
 
-.legend span {
-  position: relative;
-  bottom: 3px;
+footer {
+    position: relative;
+    top: auto
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    color: #2e008d;
+    text-align: right
 }
 
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin: 0 8px 0 0;
-  opacity: 0.7;
+.bg-white {
+    background: white
 }
 
-.legend i.icon {
-  background-size: 18px;
-  background-color: rgba(255, 255, 255, 1);
+.push {
+    margin-top: 90px
 }
+
+.stay{
+    position: fixed
+}
+
+.logo {
+    height: 70px
+}
+
+/* Branded lines*/
+
+.hr-o {
+  border: 1px solid #ff6e4e;
+}
+
+
+/*Branded colors*/
+.pink{
+    color: #308ddf
+}
+
+.orange{
+    color: #ff6e4e
+}
+
+.yellow{
+    color: #ffb500
+}
+
+.purple{
+    color: #178904
+}
+
+.dpurple {
+    color: #0d5d00
+}
+
+
+/*background darkest purple*/
+.bg-dp {
+    background-color: #d6a67a;
+}
+
+/*font for title search tables */
+.ft-sans {
+    color: #308ddf;
+    letter-spacing: px;
+    font-weight: 600
+  }
+
+/* font for body */
+.fa-sans {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-weight: 300
+    }
+
+
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 175px;
+    background-color: #d6ad7a;
+    position: fixed;
+    height: 80%;
+    overflow: auto;
+    border-radius: 10px
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #ffb500;
+    color: white;
+    font-weight: 350;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: white;
+    color: #0d5d00;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 175px;
+    padding: 1px 16px;
+    /*height: 1000px;*/
+  }
+    div.dash{
+      height: 1500px;
+    }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
