@@ -7,13 +7,10 @@ import psycopg2
 import sqlite3
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer
+from sqlalchemy.orm import Session, mapper, sessionmaker
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import MetaData, Table
-from sqlalchemy.orm import mapper, sessionmaker
 
 app = Flask(__name__)
 
@@ -79,14 +76,44 @@ def dashboard():
     """Return the homepage."""
     return render_template("dashboard.html")
 
-#Pull data from db
-@app.route("/cmovies")
-def moviecolumns():
-    # Use Pandas to perform the sql query
-    stmt = session.query(dogs).statement
-    dogs_df = pd.read_sql_query(stmt, session.bind)
+#Render tableau story page
+@app.route("/look-inside")
+def lookinside():
+    """Return the homepage."""
+    return render_template("intakeoutake.html")
 
-    data = dogs_df.to_json(orient='records')
+#Render outcomes page
+@app.route("/adoption")
+def adoption():
+    """Return the homepage."""
+    return render_template("adoption.html")
+
+#Render found page
+@app.route("/found")
+def map():
+    """Return the homepage."""
+    return render_template("found.html")
+
+#Render help page
+@app.route("/how-to-help")
+def help():
+    """Return the homepage."""
+    return render_template("howtohelp.html")
+
+#Render resources page
+@app.route("/resources")
+def resources():
+    """Return the homepage."""
+    return render_template("resources.html")
+
+#Pull data from db
+@app.route("/aac_found")
+def aac_found():
+    # Use Pandas to perform the sql query
+    stmt = session.query(found).statement
+    found_df = pd.read_sql_query(stmt, session.bind, parse_dates = {'Intake Date':'%m/%d/%Y'})
+
+    data = found_df.to_json(orient='records')
     return jsonify(data)
 
 
