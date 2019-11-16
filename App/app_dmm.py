@@ -28,7 +28,7 @@ class Final(object):
  
 #----------------------------------------------------------------------
    
-engine = create_engine('sqlite:///AA_db.sqlite', echo=False)
+engine = create_engine('sqlite:///AA.sqlite', echo=False)
 metadata = MetaData(engine)
 AAC_Stray = Table('AAC_Stray', metadata, Column("Animal ID", Integer, primary_key=True),
                       autoload=True)
@@ -107,15 +107,14 @@ def resources():
     return render_template("resources.html")
 
 #Pull data from db
-@app.route("/aac-found")
-def moviecolumns():
+@app.route("/aac_found")
+def aac_found():
     # Use Pandas to perform the sql query
     stmt = session.query(found).statement
-    found_df = pd.read_sql_query(stmt, session.bind)
+    found_df = pd.read_sql_query(stmt, session.bind, parse_dates = {'Intake Date':'%m/%d/%Y'})
 
     data = found_df.to_json(orient='records')
     return jsonify(data)
-
 
 
 if __name__ == "__main__":
