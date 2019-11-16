@@ -50,6 +50,30 @@ footer {
   border: 1px solid #ffb500;
 }
 
+/* blue button*/
+.btn-b {
+    color: white;
+    background-color: #308ddf;
+}
+
+/* blue button*/
+.btn-o {
+    color: white;
+    background-color: #ff6e4e
+}
+
+/* blue button*/
+.btn-y {
+    color: white;
+    background-color: #ffb500
+}
+
+/* blue button*/
+.btn-g {
+    color: white;
+    background-color: #178904
+}
+
 /*Branded colors*/
 .pink{
     color: #308ddf
@@ -162,7 +186,7 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 750px;
+  max-width: 650px;
   position: relative;
   margin: auto;
 }
@@ -170,7 +194,8 @@ img {vertical-align: middle;}
 /* Caption text */
 .text {
   color: #ffb500;
-  font-size: 15px;
+  font-size: 25px;
+    font-weight:1000; 
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -186,12 +211,6 @@ img {vertical-align: middle;}
   padding: 8px 12px;
   position: absolute;
   top: 0;
-}
-
-/* slideshow button*/
-.btn-slide {
-    color: white;
-    background-color: #308ddf
 }
 
 /* The dots/bullets/indicators */

@@ -43,11 +43,52 @@
         <!-- Page content -->
         <div class="content">
             <h3 class="pink">There are Many Ways You Can Help! </h3>
-            <ul>
-                <li><a href="https://atlantahumane.org/adopt/#.Xc3qBldKg2w">Adopt or Foster a friend!</a></li>
-                <li><a href="https://atlantahumane.org/volunteer/#.Xc3p6ldKg2w">Volunteer!</a></li>
-                <li><a href="https://secure.atlantahumane.org/site/TR?fr_id=1190&pg=entry&_ga=2.7485618.1075769016.1573767870-450986657.1573001683&_gac=1.16619844.1573775783.Cj0KCQiAk7TuBRDQARIsAMRrfUbMgIn-TdNufQSt_rbbqlLqHBmTo3HF8RMb4bB0CTbRgRlKYe_uR6saAl8NEALw_wcB">Donate!</a></li>
-                <li><a href="https://atlantahumane.org/events/#.Xc3qR1dKg2w">Check out Local Events!</a></li>
+            <div class="row">
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog10.jpg') }}" alt="Card image">
+                    <h4 class="card-title purple">Adopt</h4>
+                    <p class="card-text">Visit the AAC to meet and greet with available pets. Make new friends and take them home fur-ever!</p>
+                    <a href="http://www.austintexas.gov/department/animal-adoption" class="btn btn-g" target="_blank">More Info</a>
+                  </div>
+                </div>
+
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog16.jpg') }}" alt="Card image">
+                    <h4 class="card-title orange">Foster</h4>
+                    <p class="card-text">Join hundreds of foster care families. Provide love and shelter to AAC animals in your very own home!</p>
+                    <a href="http://www.austintexas.gov/fosterpets" class="btn btn-o" target="_blank">More Info</a>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog15.jpg') }}" alt="Card image">
+                    <h4 class="card-title yellow">Volunteer</h4>
+                    <p class="card-text">Austin Animal Shelter takes in more than 18,000 animals and year, but they can't do it without you. Come in with tons of love and attention to share during excercise and enrichment activities. Even groups are welcome.</p>
+                    <a href="http://www.austintexas.gov/department/volunteer" class="btn btn-y" target="_blank">More Info</a>
+                  </div>
+                </div>
+
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog3.jpg') }}" alt="Card image">
+                    <h4 class="card-title pink">Donate</h4>
+                    <p class="card-text">AAC accepts monetary and in kind donations for veterinary care, food, toys, fencing, emergency response and more.Your support helps Austin maintain its status as the largest no-kill city in the country.</p>
+                    <a href="http://www.austintexas.gov/department/support-animal-center" class="btn btn-b" target="_blank">More Info</a>
+                  </div>
+                </div>
+            </div>
+            <hr>
+            <h4 class="dpurple">Impact in Atlanta</h4>
+            <p>Check out the resources below to make a difference with the <strong>Atlanta Humane Society!</strong></p>
+            <ul style="font-size: 1.2em;">
+                <li><a class="orange" href="https://atlantahumane.org/adopt/#.Xc3qBldKg2w" target="_blank">Adopt or Foster a friend!</a></li>
+                <li><a class="orange" href="https://atlantahumane.org/volunteer/#.Xc3p6ldKg2w" target="_blank">Volunteer!</a></li>
+                <li><a class="orange"  href="https://secure.atlantahumane.org/site/TR?fr_id=1190&pg=entry&_ga=2.7485618.1075769016.1573767870-450986657.1573001683&_gac=1.16619844.1573775783.Cj0KCQiAk7TuBRDQARIsAMRrfUbMgIn-TdNufQSt_rbbqlLqHBmTo3HF8RMb4bB0CTbRgRlKYe_uR6saAl8NEALw_wcB" target="_blank">Donate!</a></li>
+                <li><a class="orange" href="https://atlantahumane.org/events/#.Xc3qR1dKg2w" target="_blank">Check out Local Events!</a></li>
                 
             </ul>
         </div>
