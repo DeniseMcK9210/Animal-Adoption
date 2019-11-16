@@ -31,7 +31,7 @@ class Final(object):
  
 #----------------------------------------------------------------------
    
-engine = create_engine('sqlite:///AA.sqlite', echo=False)
+engine = create_engine('sqlite:///project3.sqlite', echo=False)
 metadata = MetaData(engine)
 AAC_Stray = Table('AAC_Stray', metadata, Column("Animal ID", Integer, primary_key=True),
                       autoload=True)
