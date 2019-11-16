@@ -31,11 +31,11 @@ class Final(object):
  
 #----------------------------------------------------------------------
    
-engine = create_engine('sqlite:///AA_db.sqlite', echo=False)
+engine = create_engine('sqlite:///AA.sqlite', echo=False)
 metadata = MetaData(engine)
-AAC_Stray = Table('AAC_Found', metadata, Column("Animal ID", Integer, primary_key=True),
+AAC_Stray = Table('AAC_Stray', metadata, Column("Animal ID", Integer, primary_key=True),
                       autoload=True)
-AAC_Final = Table('AAC_In_Out_Final', metadata, Column("Animal ID", Integer, primary_key=True),
+AAC_Final = Table('AAC_Final', metadata, Column("Animal ID", Integer, primary_key=True),
                       autoload=True)
 Pet_Dogs = Table('Pet_Dogs', metadata, Column("Location", Integer, primary_key=True),
                       autoload=True)
