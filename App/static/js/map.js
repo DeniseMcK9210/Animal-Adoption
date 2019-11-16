@@ -1,12 +1,12 @@
 // Store our data endpoint inside queryUrl
-var queryUrl = "/aac"
+var queryUrl = "/aac_found"
 
 // Perform a GET request to the query URL
-d3.json(queryUrl).then(function(data){
+d3.json(queryUrl, function(adoptionData) {
+  
   // Once we get a response, send the data.features object to the createFeatures function
-  createFeatures(data);
-}).catch(error => console.log(error));
-
+  createFeatures(JSON.parse(adoptionData));
+});
 
 //Creates feature layer with API data input and completes map with map creator function
 function createFeatures(adoptionData) {
@@ -15,35 +15,36 @@ function createFeatures(adoptionData) {
   function chooseColor(aac) {
     switch (true) {
     case aac == "Yes (come to the shelter)":
-      return "#FFEDA0"
+      return "#FF6e4e"
       break;
     default:
-      return "#000";
+      return "#ffb500";
     }
   }
 
   var animalMarkers = []
   // Create a marker layer w/ pop up
   //loop through adoptionData to create a marker for each row
-  adoptionData.forEach(function(data){
+  for (var i = 0; i < adoptionData.length; i++) {
     animalMarkers.push(
-      L.circleMarker([data.Latitude, data.Longitude], {
-        radius: 10,
-        fillColor: chooseColor(data['At AAC']),
-        color: "#fff",
+      L.circleMarker([adoptionData[i].Latitude, adoptionData[i].Longitude], {
+        radius: 8,
+        fillColor: chooseColor(adoptionData[i]['At AAC']),
+        color: "#308ddf",
         fillOpacity: 0.7
-      }).bindPopup("<img src='" + data['Image Link'] + "'><h3>" + data['Intake Date']
-      + "</h3><hr><p> Age:" + data.Age + "</p><p> Breed:"+ data['Breed(unconfirmed)'] + 
-      "</p><p> Sex:"+ data.Found_Sex + data.Gender_x + "</p><p> Color:"+ data.color + "</p>")
+      }).bindPopup("<img src='" + adoptionData[i]['Image Link'] + "'><h3>" + adoptionData[i]['Intake Date']
+      + "</h3><hr><p> Age:" + adoptionData[i].Age + "</p><p> Breed:"+ adoptionData[i]['Breed(unconfirmed)'] + 
+      "</p><p> Sex:"+ adoptionData[i].Found_Sex + adoptionData[i].Gender_x + "</p><p> Color:"+ adoptionData[i].color + "</p>")
     );
-  })
+  }
   
   // Sending our earthquakes layer to the createMap function
   createMap(animalMarkers);
 }
 
 //Map creator and settings function 
-function createMap(animals) {
+function createMap(animalMarkers) {
+  console.log(animalMarkers);
 
   // Define streetmap layer
   var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -54,12 +55,10 @@ function createMap(animals) {
   });
 
   // Create our map, giving it the streetmap and animals layers to display on load
-  var myMap = L.map("map", {
-    center: [
-      30.2672, 97.7431
-    ],
+  var myMap = L.map("found-map", {
+    center: [30.2672, 97.7431],
     zoom: 10,
-    layers: [streetmap, animals]
+    layers: [streetmap, animalMarkers]
   });
 
   //create Legend
@@ -68,8 +67,8 @@ function createMap(animals) {
   legend.onAdd = function(map) {
     var div = L.DomUtil.create("div", "legend");
     div.innerHTML += "<h4>At AAC?</h4>";
-    div.innerHTML += '<i style="background: #FFEDA0"></i><span>Yes (come to the shelter)</span><br>';
-    div.innerHTML += '<i style="background: #000"></i><span>No (contact for more info)</span><br>';
+    div.innerHTML += '<i style="background: #FF6e4e"></i><span>Yes (come to the shelter)</span><br>';
+    div.innerHTML += '<i style="background: #ffb500"></i><span>No (contact for more info)</span><br>';
     
     return div;
   };
