@@ -26,16 +26,18 @@ function createFeatures(adoptionData) {
   // Create a marker layer w/ pop up
   //loop through adoptionData to create a marker for each row
   for (var i = 0; i < adoptionData.length; i++) {
-    animalMarkers.push(
-      L.circleMarker([adoptionData[i].Latitude, adoptionData[i].Longitude], {
-        radius: 8,
-        fillColor: chooseColor(adoptionData[i]['At AAC']),
-        color: "#308ddf",
-        fillOpacity: 0.7
-      }).bindPopup("<img src='" + adoptionData[i]['Image Link'] + "'><h3>" + adoptionData[i]['Intake Date']
-      + "</h3><hr><p> Age:" + adoptionData[i].Age + "</p><p> Breed:"+ adoptionData[i]['Breed(unconfirmed)'] + 
-      "</p><p> Sex:"+ adoptionData[i].Found_Sex + adoptionData[i].Gender_x + "</p><p> Color:"+ adoptionData[i].color + "</p>")
-    );
+    if (adoptionData[i].Latitude !== null) {
+      animalMarkers.push(
+        L.circleMarker([adoptionData[i].Latitude, adoptionData[i].Longitude], {
+          radius: 8,
+          fillColor: chooseColor(adoptionData[i]['At AAC']),
+          color: "#308ddf",
+          fillOpacity: 0.7
+        }).bindPopup("<img src='" + adoptionData[i]['Image Link'] + "'><h5>" + adoptionData[i]['Intake Date']
+        + "</h5><hr><p> Age: " + adoptionData[i].Age + "</p><p> Breed: "+ adoptionData[i]['Breed(unconfirmed)'] + 
+        "</p><p> Sex: "+ adoptionData[i].Found_Sex + " " + adoptionData[i].Gender_x + "</p><p> Color: "+ adoptionData[i].color + "</p>")
+      );
+    }
   }
   
   // Sending our earthquakes layer to the createMap function
