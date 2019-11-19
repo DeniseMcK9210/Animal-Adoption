@@ -70,12 +70,6 @@ def home():
     """Return the homepage."""
     return render_template("home.html")
 
-#Render dashboard page
-@app.route("/dashboard")
-def dashboard():
-    """Return the homepage."""
-    return render_template("dashboard.html")
-
 #Render tableau story page
 @app.route("/look-inside")
 def lookinside():
@@ -112,6 +106,9 @@ def aac_found():
     # Use Pandas to perform the sql query
     stmt = session.query(found).statement
     found_df = pd.read_sql_query(stmt, session.bind, parse_dates = {'Intake Date':'%m/%d/%Y'})
+
+    found_df["Latitude"] = pd.to_numeric(found_df["Latitude"])
+    found_df["Longitude"] = pd.to_numeric(found_df["Longitude"])
 
     data = found_df.to_json(orient='records')
     return jsonify(data)

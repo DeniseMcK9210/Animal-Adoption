@@ -14,6 +14,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="SHORTCUT ICON" href="{{ url_for('static', filename='media/favicon.ico') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='media/favicon.ico') }}" type="image/ico" />
     <title>Inside AAC</title>
   </head>
 
@@ -31,7 +33,6 @@
             <a href="/home">Home</a>
               <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
                       <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/dashboard">Dashboard</a>
                         <a class="dropdown-item active" href="/look-inside">A Look Inside</a>
                         <a class="dropdown-item" href="/adoption">Adoption Probability</a>
                       </div>
