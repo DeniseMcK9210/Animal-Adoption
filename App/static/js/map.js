@@ -33,9 +33,8 @@ function createFeatures(adoptionData) {
           fillColor: chooseColor(adoptionData[i]['At AAC']),
           color: "#308ddf",
           fillOpacity: 0.7
-        }).bindPopup("<img src='" + adoptionData[i]['Image Link'] + "'><h5>" + adoptionData[i]['Intake Date']
-        + "</h5><hr><p> Age: " + adoptionData[i].Age + "</p><p> Breed: "+ adoptionData[i]['Breed(unconfirmed)'] + 
-        "</p><p> Sex: "+ adoptionData[i].Found_Sex + " " + adoptionData[i].Gender_x + "</p><p> Color: "+ adoptionData[i].color + "</p>")
+        }).bindPopup("<p> Age: " + adoptionData[i].Age + "</p><p> Breed: "+ adoptionData[i]['Breed(unconfirmed)'] + 
+        "</p><p> Sex: "+ adoptionData[i].Found_Sex + " " + adoptionData[i].Gender_x + "</p><p> Color: "+ adoptionData[i].Color_x + "</p>")
       );
     }
   }
@@ -58,9 +57,9 @@ function createMap(animalMarkers) {
 
   // Create our map, giving it the streetmap and animals layers to display on load
   var myMap = L.map("found-map", {
-    center: [30.2672, 97.7431],
-    zoom: 10,
-    layers: [streetmap, animalMarkers]
+    center: [30.2672, -97.7431],
+    zoom: 11,
+    layers: [streetmap, L.layerGroup(animalMarkers)]
   });
 
   //create Legend
