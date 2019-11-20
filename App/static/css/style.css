@@ -96,6 +96,11 @@ footer {
 }
 
 
+.matrix {
+    width:350px;
+}
+
+
 /*background darkest purple*/
 .bg-dp {
     background-color: #d6a67a;
@@ -259,6 +264,23 @@ img {vertical-align: middle;}
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1;
     height: 100%;
+  width: 100%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay2 {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+    height: 40px;
   width: 100%;
   transition: .5s ease;
   opacity:1;
