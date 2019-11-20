@@ -199,6 +199,13 @@ img {vertical-align: middle;}
   margin: auto;
 }
 
+/* Slideshow container */
+.slideshow-container-stat {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+}
+
 /* Caption text */
 .text {
   color: #ffb500;
@@ -301,9 +308,9 @@ img {vertical-align: middle;}
 
 .slide {
     position: inherit;
-    left: -825px;
-    width: 825px;
-    height: 550px;
+    left: -900px;
+    width: 900px;
+    height: 425px;
     -webkit-animation: slide 0.5s forwards;
     -webkit-animation-delay: 0s;
     animation: slide 0.5s forwards;
