@@ -33,8 +33,8 @@ function createFeatures(adoptionData) {
           fillColor: chooseColor(adoptionData[i]['At AAC']),
           color: "#308ddf",
           fillOpacity: 0.7
-        }).bindPopup("<p> Age: " + adoptionData[i].Age + "</p><p> Breed: "+ adoptionData[i]['Breed(unconfirmed)'] + 
-        "</p><p> Sex: "+ adoptionData[i].Found_Sex + " " + adoptionData[i].Gender_x + "</p><p> Color: "+ adoptionData[i].Color_x + "</p>")
+        }).bindPopup("<p><strong> Age: </strong>" + adoptionData[i].Age + "</p><p><strong> Breed: </strong>"+ adoptionData[i]['Breed(unconfirmed)'] + 
+        "</p><p><strong> Sex: </strong>"+ adoptionData[i].Found_Sex + " " + adoptionData[i].Gender_x + "</p><p><strong> Color: </strong>"+ adoptionData[i].Color_x + "</p>")
       );
     }
   }
@@ -55,11 +55,19 @@ function createMap(animalMarkers) {
     accessToken: API_KEY
   });
 
+  //Marker for AAC
+  var aacIcon = L.icon({
+    iconUrl: 'http://www.austintexas.gov/sites/default/files/aac_logo.jpg',
+    iconSize:     [87, 35], // size of the icon
+    iconAnchor:   [43, 17], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+  var aac = L.marker([30.251395, -97.690429], {icon: aacIcon})
   // Create our map, giving it the streetmap and animals layers to display on load
   var myMap = L.map("found-map", {
     center: [30.2672, -97.7431],
     zoom: 11,
-    layers: [streetmap, L.layerGroup(animalMarkers)]
+    layers: [streetmap, L.layerGroup(animalMarkers), aac]
   });
 
   //create Legend
