@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="SHORTCUT ICON" href="{{ url_for('static', filename='media/favicon.ico') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='media/favicon.ico') }}" type="image/ico" />
+    <title>Inside AAC</title>
+  </head>
+
+
+  <body class="fa-sans"> 
+      <nav class="navbar navbar-expand-lg bg-white py-1  fixed-top">
+          <a class="navbar-brand" href="/">
+            <img class="logo" src="{{ url_for('static', filename='media/logo.png') }}" alt="Inside AAC">
+            </a>
+        </nav>
+
+   <!-- The sidebar -->
+      <div class="push">
+         <div class="sidebar">
+            <a href="/home">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                      <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/look-inside">A Look Inside</a>
+                        <a class="dropdown-item" href="/adoption">Adoption Probability</a>
+                      </div>
+             <a href="/found">Location Found</a>
+            <a class="active" href="/how-to-help">How to Help</a>
+            <a href="/resources">Resources</a>
+        </div>
+
+        <!-- Page content -->
+        <div class="content">
+            <h3 class="pink">There are Many Ways You Can Help! </h3>
+            <div class="row">
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog10.jpg') }}" alt="Card image">
+                    <h4 class="card-title purple">Adopt</h4>
+                    <p class="card-text">Visit the AAC to meet and greet with available pets. Make new friends and take them home fur-ever!</p>
+                    <a href="http://www.austintexas.gov/department/animal-adoption" class="btn btn-g" target="_blank">More Info</a>
+                  </div>
+                </div>
+
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog16.jpg') }}" alt="Card image">
+                    <h4 class="card-title orange">Foster</h4>
+                    <p class="card-text">Join hundreds of foster care families. Provide love and shelter to AAC animals in your very own home!</p>
+                    <a href="http://www.austintexas.gov/fosterpets" class="btn btn-o" target="_blank">More Info</a>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog15.jpg') }}" alt="Card image">
+                    <h4 class="card-title yellow">Volunteer</h4>
+                    <p class="card-text">Austin Animal Center takes in more than 18,000 animals and year, but they can't do it without you. Come in with tons of love and attention to share during excercise and enrichment activities. Even groups are welcome.</p>
+                    <a href="http://www.austintexas.gov/department/volunteer" class="btn btn-y" target="_blank">More Info</a>
+                  </div>
+                </div>
+
+                <div class="card col-md-5 col-sm-12 m-4">
+                  <div class="card-body">
+                    <img class="card-img-top" src="{{ url_for('static', filename='media/dog3.jpg') }}" alt="Card image">
+                    <h4 class="card-title pink">Donate</h4>
+                    <p class="card-text">AAC accepts monetary and in kind donations for veterinary care, food, toys, fencing, emergency response and more.Your support helps Austin maintain its status as the largest no-kill city in the country.</p>
+                    <a href="http://www.austintexas.gov/department/support-animal-center" class="btn btn-b" target="_blank">More Info</a>
+                  </div>
+                </div>
+            </div>
+            <hr>
+            <h4 class="dpurple">Impact in Atlanta</h4>
+            <p>Check out the resources below to make a difference with the <strong>Atlanta Humane Society!</strong></p>
+            <ul style="font-size: 1.2em;">
+                <li><a class="orange" href="https://atlantahumane.org/adopt/#.Xc3qBldKg2w" target="_blank">Adopt or Foster a friend!</a></li>
+                <li><a class="orange" href="https://atlantahumane.org/volunteer/#.Xc3p6ldKg2w" target="_blank">Volunteer!</a></li>
+                <li><a class="orange"  href="https://secure.atlantahumane.org/site/TR?fr_id=1190&pg=entry&_ga=2.7485618.1075769016.1573767870-450986657.1573001683&_gac=1.16619844.1573775783.Cj0KCQiAk7TuBRDQARIsAMRrfUbMgIn-TdNufQSt_rbbqlLqHBmTo3HF8RMb4bB0CTbRgRlKYe_uR6saAl8NEALw_wcB" target="_blank">Donate!</a></li>
+                <li><a class="orange" href="https://atlantahumane.org/events/#.Xc3qR1dKg2w" target="_blank">Check out Local Events!</a></li>
+                
+            </ul>
+        </div>
+      </div>
+    </body>
+            
+    <footer class="py-3 push">
+        <div class="container">
+          <p class="m-0 text-center"> Copyright &copy; 2019 The Team. All rights reserved.</p>
+        </div>
+      </footer>
+    
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="SHORTCUT ICON" href="{{ url_for('static', filename='media/favicon.ico') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='media/favicon.ico') }}" type="image/ico" />
+    <title>Inside AAC</title>
+  </head>
+
+
+  <body class="fa-sans"> 
+      <nav class="navbar navbar-expand-lg bg-white py-1  fixed-top">
+          <a class="navbar-brand" href="/">
+            <img class="logo" src="{{ url_for('static', filename='media/logo.png') }}" alt="Inside AAC">
+            </a>
+        </nav>
+
+    <!-- The sidebar -->
+      <div class="push">
+         <div class="sidebar">
+            <a href="/home">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                      <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/look-inside">A Look Inside</a>
+                        <a class="dropdown-item" href="/adoption">Adoption Probability</a>
+                      </div>
+             <a href="/found">Location Found</a>
+            <a href="/how-to-help">How to Help</a>
+            <a class="active" href="/resources">Resources</a>
+        </div>
+
+        <!-- Page content -->
+        <div class="content">
+            <h3 class="dpurple">Resources</h3>
+            <hr class="hr-o">
+            <h5 class="pink">The Data</h5>
+            <p>Intake, Outcome and Found Pets Map data were sourced from the official City of Austin open data portal. Variables included the following for each documented dog:
+                <div class="row ml-5">
+                    <ul class="black col-lg-5 col-sm-12">
+                        <li>Gender (M/F)</li>
+                        <li>Intake Sex (Intact, Spayed, Neutered)</li>
+                        <li>Outcome Sex (Intact, Spayed, Neutered)</li>
+                        <li>Color</li>
+                        <li>Breed</li>
+                        <li>Location Found</li>
+                        <li>Intake Date</li>
+                    </ul>
+                    <ul class="black col-lg-5 col-sm-12">
+                        <li>Outcome Date</li>
+                        <li>Intake Type</li>
+                        <li>Outcome Type</li>
+                        <li>Intake Condition</li>
+                        <li>Age Upon Intake</li>
+                        <li>Age Upon Outcome</li>
+                        <li>Duration of Stay</li>
+                    </ul>
+            </div>
+                <p class="pink"><strong>Data Source:</strong></p>
+            <ul>
+                <li><a href="https://data.austintexas.gov/browse?q=austin%20animal%20center&sortBy=relevance" target="_blank">AAC Data</a></li>
+            </ul>
+            <hr class="hr-o">
+             <h5 class="pink">Machine Learning</h5>
+            <p>ML info here info here </p>
+
+            <hr class="hr-o">
+             <h5 class="pink">Tableau Explained</h5>
+            <p>Tableau was used to see if there were any obvious trends between the intake and outtake data before taking a deeper dive using Machine Learning. Visualizations were used to illustrate the outcome of animals based on intake type. The bar charts were used as an overview to express the overall number of animals per intake type and per outcome type. Other trends that were explored included season, age, breed and name upon adoption date. An interesting note that we came across during our research is that over 11,000 healthy dogs were surrendered to shelters by their owners. This number accounts for 18% of dogs that were intake at the Austin Animal shelter. The promotional posters at the end are to illustrate our goal. If we are able to predict and find trends in adoption we can help those dogs with a lower chance get adopted by running promotions at the shelter. </p>
+
+            
+            <hr class="hr-o">
+             <h5 class="pink">The Team</h5>
+           <p class= "text-center"><a href="https://github.com/DeniseMcK9210" target="_blank">Denise McKinley</a>  |  
+            <a href="https://github.com/ssharma46" target="_blank">Supraja Sharma</a>  |  
+            <a href="https://github.com/cnaywill" target="_blank">Courtenay Gray</a>  |  
+            <a href="https://github.com/tessabanum" target="_blank">Tessy Azogu</a>  |  
+            <a href="https://github.com/kimkonopka" target="_blank">Kim Konopka</a>  |  
+            <a href="https://github.com/wstone43" target="_blank">Wesley Stone</a>  |  
+            </p>
+          </div>
+      </div>
+    </body>
+
+    <footer class="py-3 push">
+        <div class="container">
+          <p class="m-0 text-center"> Copyright &copy; 2019 The Team. All rights reserved.</p>
+        </div>
+      </footer>
+</html>

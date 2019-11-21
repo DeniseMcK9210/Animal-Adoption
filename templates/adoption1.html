@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="SHORTCUT ICON" href="{{ url_for('static', filename='media/favicon.ico') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='media/favicon.ico') }}" type="image/ico" />
+    <title>Inside AAC</title>
+  </head>
+
+
+  <body class="fa-sans"> 
+      <nav class="navbar navbar-expand-lg bg-white py-1  fixed-top">
+          <a class="navbar-brand" href="/">
+            <img class="logo" src="{{ url_for('static', filename='media/logo.png') }}" alt="Inside AAC">
+            </a>
+        </nav>
+
+    <!-- The sidebar -->
+      <div class="push">
+         <div class="sidebar">
+            <a href="/home">Home</a>
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                      <div class="dropdown-menu dropdown-menu-right bg-dp" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/look-inside">A Look Inside</a>
+                        <a class="dropdown-item active" href="/adoption">Adoption Probability</a>
+                      </div>
+             <a href="/found">Location Found</a>
+            <a href="/how-to-help">How to Help</a>
+            <a href="/resources">Resources</a>
+        </div>
+          
+        <!-- Page content -->
+        <div class="content">
+            <h3 class="dpurple">Outcome Probability</h3>
+            <hr class="hr-o">
+            <h4>To Be or Not to Be... Adopted</h4>
+                    <p class="pink"><strong>Random Forest</strong></p>
+                    <div class=row>
+                        <div class="col-lg-8 col-sm-12">
+                            <img src="{{ url_for('static', filename='media/logo2.png') }}" class= "matrix">
+                            <p>RMSE: .41</p>
+                        </div>
+                        <table class="col-lg-3 col-sm-12">
+                            <tr>
+                                <th>Feature</th>
+                                <th>Importance</th>
+                            </tr>
+                            <tr>
+                                <td>Duration</td>
+                                <td>29.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Outcome Age(monnths)</td>
+                                <td>12.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Intake Type</td>
+                                <td>11%</td>
+                            </tr>
+                            <tr>
+                                <td>Outcome Sex</td>
+                                <td>10.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Main Breed</td>
+                                <td>8.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Main Color</td>
+                                <td>5.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Intake Month</td>
+                                <td>4.9%</td>
+                            </tr>
+                            </table>
+                        </div>
+                <p class="orange"><strong>Gradient Boosting</strong></p>
+                <img src="{{ url_for('static', filename='media/logo2.png') }}" class= "matrix">
+                <p>RMSE: .37</p>
+                <h5>Analysis</h5>
+                <p>erfiheurhfwndqi;bn;wl</p>
+                <hr class="hr-y">
+                <h4>All Outcomes</h4>
+                <p class="pink"><strong>Random Forest</strong></p>
+                <img src="{{ url_for('static', filename='media/logo2.png') }}" class= "matrix">
+                <p>RMSE: 2.67</p>
+                <p class="orange"><strong>Gradient Boosting</strong></p>
+                <img src="{{ url_for('static', filename='media/logo2.png') }}" class= "matrix">
+                <p>RMSE: 2.4</p>
+               <h5>Analysis</h5>
+                <p>weiuhduehuebguibibfelh</p>
+            </div>
+      </div>
+    </body>
+         
+        <footer class="py-3 push">
+        <div class="container">
+          <p class="m-0 text-center"> Copyright &copy; 2019 The Team. All rights reserved.</p>
+        </div>
+      </footer>
+
+    
+</html>
