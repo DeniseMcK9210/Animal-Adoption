@@ -9,7 +9,7 @@ https://insideaac.herokuapp.com/
 1. What is the probability of a dog being adopted based on it's intake and outcome features?
 2. What are the most important characteristics to determine probability of dog adoption?
 3. Why do owners surrender their pets?
-4.In what areas are dogs most likely found?
+4. In what areas are dogs most likely found?
 
 ### The Data
 Intake, Outcome and Found Pets Map data were sourced from the official City of Austin open data portal (https://data.austintexas.gov/browse?q=austin%20animal%20center&sortBy=relevance) from 2013-2019. Variables included the following for each documented dog:
@@ -37,6 +37,10 @@ Intake, Outcome and Found Pets Map data were sourced from the official City of A
   4. Gradient Boosting on All Outcomes
 
 ### Analysis
-Comparing the binary models, same accuracy, though gradient boosting model was better at correctly predicting positives and random forest model was better at correctly predicting negatives. The gradient boosting model also resulted in lower RMSE. 
-Both models agree that duration, outcome age in months and main breed are the most important features for predicting outcome (adoption or no adoption). The spread of importance also followed similar trends.
-The models for all outcomes were similarly related in accuracy and RMSE, but show unfavorable results compared to the same model type in the binary version.
+1. Comparing the binary models, same accuracy, though gradient boosting model was better at correctly predicting positives and random forest model was better at correctly predicting negatives. The gradient boosting model also resulted in lower RMSE. The spread of importance also followed similar trends. The models for all outcomes were similarly related in accuracy and RMSE, but show unfavorable results compared to the same model type in the binary version.
+
+2.Both binary models agree that duration, outcome age in months and main breed are the most important features for predicting outcome (adoption or no adoption).
+
+3. Owners mostly to surrender normal, healthy dogs. This dataset does not provide the necessary information for further analysis of this issue.
+
+4. Dogs were most likely found near parks and major highways and near the central/Downtown Austin area.
