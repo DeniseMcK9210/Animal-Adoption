@@ -39,7 +39,7 @@ Intake, Outcome and Found Pets Map data were sourced from the official City of A
 ### Analysis
 1. Comparing the binary models, same accuracy, though gradient boosting model was better at correctly predicting positives and random forest model was better at correctly predicting negatives. The gradient boosting model also resulted in lower RMSE. The spread of importance also followed similar trends. The models for all outcomes were similarly related in accuracy and RMSE, but show unfavorable results compared to the same model type in the binary version.
 
-2.Both binary models agree that duration, outcome age in months and main breed are the most important features for predicting outcome (adoption or no adoption).
+2. Both binary models agree that duration, outcome age in months and main breed are the most important features for predicting outcome (adoption or no adoption).
 
 3. Owners mostly to surrender normal, healthy dogs. This dataset does not provide the necessary information for further analysis of this issue.
 
