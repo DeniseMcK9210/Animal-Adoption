@@ -3,7 +3,7 @@
 Approximately 6.5 million animals enter U.S. animal shelters nationwide every year. Of those, only half are adopted and less than one sixth are returned to their owners. In 2011, it was estimated that 2.6 million animals were euthanized. This number has decreased to 1.5 million in recent years, partially due to the number of animals being adopted or being returned to their owners. By finding the probability of an animal being adopted, we could then help improve those animals' chances of finding their fur-ever homes! In order to do this we took a look inside Austin Animal Center's intake and outcome data to develop a model to predict the outcomes of pets based on age, sex, physical characteristics and duration of stay.
 
 ### The Site
-https://insideaac.herokuapp.com/
+[Inside AAC](https://insideaac.herokuapp.com/)
 
 ## The Questions
 1. What is the probability of a dog being adopted based on it's intake and outcome features?
@@ -12,7 +12,7 @@ https://insideaac.herokuapp.com/
 4. In what areas are dogs most likely found?
 
 ### The Data
-Intake, Outcome and Found Pets Map data were sourced from the official City of Austin open data portal (https://data.austintexas.gov/browse?q=austin%20animal%20center&sortBy=relevance) from 2013-2019. Variables included the following for each documented dog:
+Intake, Outcome and Found Pets Map data were sourced from the official [City of Austin open data portal](https://data.austintexas.gov/browse?q=austin%20animal%20center&sortBy=relevance) from 2013-2019. Variables included the following for each documented dog:
 
  -  Gender (M/F)
  -  Intake Sex (Intact, Spayed, Neutered)
